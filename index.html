@@ -4,17 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Downloader</title>
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and general layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Main container */
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4c6ef5;
+        }
+
+        button {
+            background-color: #4c6ef5;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3b5bbf;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Video Downloader</h1>
-    <form action="/download" method="post">
-        <label for="url">Enter Video URL:</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Download</button>
-    </form>
-    <br>
-    {% if msg %}
-        <p>{{ msg }}</p>
-    {% endif %}
+    <div class="container">
+        <h1>Video Downloader</h1>
+        <form action="/download" method="post">
+            <label for="url">Enter Video URL:</label>
+            <input type="text" id="url" name="url" required placeholder="Paste URL here...">
+            <button type="submit">Download</button>
+        </form>
+        <br>
+        {% if msg %}
+            <p>{{ msg }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>
